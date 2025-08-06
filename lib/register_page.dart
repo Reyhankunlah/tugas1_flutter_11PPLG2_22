@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'custom_input.dart';
-import 'user_data.dart';
+import 'Components/custom_input.dart';
+import 'Components/user_data.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -11,9 +11,9 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final namaController = TextEditingController();
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  final txtNamaController = TextEditingController();
+  final txtUsernameController = TextEditingController();
+  final txtPasswordController = TextEditingController();
   String jenisKelamin = "Laki-laki";
   DateTime? tanggalLahir;
 
@@ -25,14 +25,14 @@ class _RegisterPageState extends State<RegisterPage> {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            CustomInput(label: "Nama", controller: namaController),
+            CustomInput(label: "Nama", controller: txtNamaController),
             CustomInput(
               label: "Email / Username",
-              controller: usernameController,
+              controller: txtUsernameController,
             ),
             CustomInput(
               label: "Password",
-              controller: passwordController,
+              controller: txtPasswordController,
               isPassword: true,
             ),
 
@@ -85,9 +85,9 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () {
                 // Simpan ke user_data.dart
                 UserData.simpan(
-                  namaBaru: namaController.text,
-                  usernameBaru: usernameController.text,
-                  passwordBaru: passwordController.text,
+                  namaBaru: txtNamaController.text,
+                  usernameBaru: txtUsernameController.text,
+                  passwordBaru: txtPasswordController.text,
                   jenisKelaminBaru: jenisKelamin,
                   tglLahirBaru: tanggalLahir,
                 );

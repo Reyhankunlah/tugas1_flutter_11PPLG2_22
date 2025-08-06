@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tugas1_11pplg2/Components/custom_button.dart';
+import 'package:tugas1_11pplg2/Components/custom_input.dart';
+import 'package:tugas1_11pplg2/Components/custom_text.dart';
 import 'register_page.dart';
-import 'user_data.dart';
+import 'Components/user_data.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -25,41 +28,34 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "Please fill username and password below",
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.blueAccent,
-                fontWeight: FontWeight.bold,
-              ),
+            CustomText(
+              myText: "Please fill username and password below",
+              myTextColor: Colors.blueAccent,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              align: TextAlign.center,
             ),
 
             Image.asset('assets/smkrus.png'),
 
             Container(
               margin: EdgeInsets.only(bottom: 20),
-              child: TextField(
-                controller: txtUsername,
-                decoration: const InputDecoration(
-                  labelText: "Username",
-                  border: OutlineInputBorder(),
-                ),
-              ),
+              child: CustomInput(label: "Username", controller: txtUsername),
             ),
 
-            TextField(
+            CustomInput(
+              label: "Password",
               controller: txtPassword,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder(),
-              ),
+              isPassword: true,
             ),
 
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
+              child: CustomButton(
+                myText: "LOGIN",
+                myTextColor: const Color.fromARGB(255, 64, 69, 215),
                 onPressed: () {
+                  print("Button Clicked");
                   if (txtUsername.text == UserData.username &&
                       txtPassword.text == UserData.password) {
                     setState(() {
@@ -71,7 +67,6 @@ class _LoginPageState extends State<LoginPage> {
                     });
                   }
                 },
-                child: Text("LOGIN"),
               ),
             ),
 
