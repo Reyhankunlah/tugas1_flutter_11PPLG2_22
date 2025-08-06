@@ -40,13 +40,18 @@ class _LoginPageState extends State<LoginPage> {
 
             Container(
               margin: EdgeInsets.only(bottom: 20),
-              child: CustomInput(label: "Username", controller: txtUsername),
+              child: CustomInput(
+                label: "Username",
+                controller: txtUsername,
+                isNumber: false,
+              ),
             ),
 
             CustomInput(
               label: "Password",
               controller: txtPassword,
               isPassword: true,
+              isNumber: false,
             ),
 
             SizedBox(

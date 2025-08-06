@@ -25,15 +25,21 @@ class _RegisterPageState extends State<RegisterPage> {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            CustomInput(label: "Nama", controller: txtNamaController),
+            CustomInput(
+              label: "Nama",
+              controller: txtNamaController,
+              isNumber: false,
+            ),
             CustomInput(
               label: "Email / Username",
               controller: txtUsernameController,
+              isNumber: false,
             ),
             CustomInput(
               label: "Password",
               controller: txtPasswordController,
               isPassword: true,
+              isNumber: false,
             ),
 
             DropdownButtonFormField<String>(

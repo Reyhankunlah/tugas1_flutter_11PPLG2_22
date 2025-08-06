@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
@@ -21,11 +22,15 @@ class CalculatorPages extends StatelessWidget {
             label: "Input Angka 1",
             controller: calcController.txtAngka1,
             isPassword: false,
+            inputType: TextInputType.number,
+            isNumber: true,
           ),
           CustomInput(
             label: "Input Angka 2",
             controller: calcController.txtAngka2,
             isPassword: false,
+            inputType: TextInputType.number,
+            isNumber: true,
           ),
           Row(
             children: [
