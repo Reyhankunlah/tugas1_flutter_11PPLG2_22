@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/route_manager.dart';
 import 'package:tugas1_11pplg2/Pages/calculator_pages.dart';
 import 'package:tugas1_11pplg2/Pages/editplayer_page.dart';

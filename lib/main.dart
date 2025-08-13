@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tugas1_11pplg2/Pages/calculator_pages.dart';
 import 'package:tugas1_11pplg2/Routes/pages.dart';
 import 'package:tugas1_11pplg2/Routes/routes.dart';
-import 'login_page.dart';
 
 void main() {
   runApp(const MyApp());
