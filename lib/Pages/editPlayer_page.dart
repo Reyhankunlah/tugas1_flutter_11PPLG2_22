@@ -40,7 +40,7 @@ class EditplayerPage extends StatelessWidget {
               controller: edtPlayerController.numberC,
               isPassword: false,
               inputType: TextInputType.text,
-              isNumber: false,
+              isNumber: true,
             ),
 
             CustomButton(

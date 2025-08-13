@@ -6,7 +6,9 @@ import 'package:tugas1_11pplg2/Routes/routes.dart';
 class FootballplayerPages extends StatelessWidget {
   FootballplayerPages({super.key});
 
-  final FootballplayerController c = Get.put(FootballplayerController());
+  final FootballplayerController cntrlFootballPlayer = Get.put(
+    FootballplayerController(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +18,22 @@ class FootballplayerPages extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Obx(() {
           return ListView.builder(
-            itemCount: c.players.length,
+            itemCount: cntrlFootballPlayer.players.length,
             itemBuilder: (context, index) {
-              final p = c.players[index];
+              final p = cntrlFootballPlayer.players[index];
               return Card(
                 child: ListTile(
-                  leading: CircleAvatar(child: Text(p.number.toString())),
+                  leading: CircleAvatar(
+                    radius: 24,
+                    foregroundImage: (p.photo != null && p.photo!.isNotEmpty)
+                        ? AssetImage(p.photo!)
+                        : null,
+                    onForegroundImageError: (exception, stackTrace) {
+                      debugPrint('Gagal load asset: ${p.photo} -> $exception');
+                    },
+                    child: Text(p.number.toString()),
+                  ),
+
                   title: Text(p.name),
                   subtitle: Text("${p.position} • #${p.number}"),
                   trailing: const Icon(Icons.chevron_right),

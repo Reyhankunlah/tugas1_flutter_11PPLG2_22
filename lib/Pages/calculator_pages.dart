@@ -113,9 +113,9 @@ class CalculatorPages extends StatelessWidget {
               ),
             ),
 
-            // Tombol Main Menu
+            // Tombol Football
             CustomButton(
-              myText: "Main Menu",
+              myText: "Football Page",
               myTextColor: Colors.red,
               onPressed: () {
                 Get.toNamed(AppRoutes.footballPage);
