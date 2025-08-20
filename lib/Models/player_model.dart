@@ -2,7 +2,7 @@ class Player {
   final String name;
   final String position;
   final int number;
-  final String? photo; // path asset lokal, mis: assets/players/messi.jpg
+  final String? photo;
 
   const Player({
     required this.name,

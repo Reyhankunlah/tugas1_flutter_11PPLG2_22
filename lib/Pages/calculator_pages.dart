@@ -4,6 +4,7 @@ import 'package:tugas1_11pplg2/Components/custom_button.dart';
 import 'package:tugas1_11pplg2/Components/custom_input.dart';
 import 'package:tugas1_11pplg2/Components/custom_text.dart';
 import 'package:tugas1_11pplg2/Controllers/calculator_controller.dart';
+import 'package:tugas1_11pplg2/Controllers/nav/navigation_controller.dart';
 import 'package:tugas1_11pplg2/Routes/routes.dart';
 
 class CalculatorPages extends StatelessWidget {
@@ -118,7 +119,7 @@ class CalculatorPages extends StatelessWidget {
               myText: "Football Page",
               myTextColor: Colors.red,
               onPressed: () {
-                Get.toNamed(AppRoutes.footballPage);
+                Get.find<NavigationController>().changeIndex(2);
               },
             ),
           ],
