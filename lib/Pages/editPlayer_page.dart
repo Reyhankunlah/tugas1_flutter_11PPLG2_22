@@ -9,9 +9,7 @@ import 'package:tugas1_11pplg2/Controllers/editPlayer_controller.dart';
 class EditplayerPage extends StatelessWidget {
   EditplayerPage({super.key});
 
-  final EditplayerController edtPlayerController = Get.put(
-    EditplayerController(),
-  );
+  EditplayerController edtPlayerController = Get.put(EditplayerController());
 
   @override
   Widget build(BuildContext context) {

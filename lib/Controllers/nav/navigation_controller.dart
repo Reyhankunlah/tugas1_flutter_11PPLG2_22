@@ -5,14 +5,13 @@ import 'package:tugas1_11pplg2/Pages/footballPlayer_pages.dart';
 import 'package:tugas1_11pplg2/Pages/profile_page.dart';
 
 class NavigationController extends GetxController {
-  final RxInt index = 0.obs;
+  final RxInt selectedIndex = 0.obs;
 
-  // Simpan halaman dalam list; IndexedStack akan menjaga state tiap tab
-  final pages = <Widget>[
+  final List<Widget> pages = [
     CalculatorPages(),
     ProfilePage(),
     FootballplayerPages(),
   ];
 
-  void changeIndex(int i) => index.value = i;
+  void changeIndex(int i) => selectedIndex.value = i;
 }

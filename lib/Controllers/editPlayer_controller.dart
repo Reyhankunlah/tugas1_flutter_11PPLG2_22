@@ -15,11 +15,7 @@ class EditplayerController extends GetxController {
     super.onInit();
     footballCtrl = Get.find<FootballplayerController>();
 
-    final args = Get.arguments;
-    if (args == null || args['index'] == null) {
-      throw Exception('Argument "index" tidak ditemukan untuk EditplayerPage.');
-    }
-    index = args['index'] as int;
+    index = Get.arguments as int;
 
     final p = footballCtrl.players[index];
     nameC.text = p.name;

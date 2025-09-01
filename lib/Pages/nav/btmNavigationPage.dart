@@ -6,16 +6,19 @@ import 'package:tugas1_11pplg2/Controllers/nav/navigation_controller.dart';
 class Btmnavigationpage extends StatelessWidget {
   Btmnavigationpage({super.key});
 
+  NavigationController navigationController = Get.put(NavigationController());
+
   @override
   Widget build(BuildContext context) {
-    final c = Get.put(NavigationController());
-
-    return Obx(() {
-      return Scaffold(
-        body: IndexedStack(index: c.index.value, children: c.pages),
+    return Obx(
+      () => Scaffold(
+        body: IndexedStack(
+          index: navigationController.selectedIndex.value,
+          children: navigationController.pages,
+        ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: c.index.value,
-          onTap: c.changeIndex,
+          currentIndex: navigationController.selectedIndex.value,
+          onTap: navigationController.changeIndex,
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.calculate), label: 'Calc'),
@@ -26,7 +29,7 @@ class Btmnavigationpage extends StatelessWidget {
             ),
           ],
         ),
-      );
-    });
+      ),
+    );
   }
 }

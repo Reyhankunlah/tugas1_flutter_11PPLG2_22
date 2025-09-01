@@ -38,10 +38,7 @@ class FootballplayerPages extends StatelessWidget {
                   subtitle: Text("${p.position} • #${p.number}"),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
-                    Get.toNamed(
-                      AppRoutes.editPlayerPage,
-                      arguments: {'index': index},
-                    );
+                    Get.toNamed(AppRoutes.editPlayerPage, arguments: index);
                   },
                 ),
               );
